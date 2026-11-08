@@ -1,0 +1,197 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Wedding Invitation</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Great+Vibes&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <!-- OPENING ENVELOPE -->
+    <section class="envelope-screen" id="envelopeScreen">
+        <div class="envelope-content">
+            <p class="small-heading">YOU ARE CORDIALLY INVITED TO</p>
+            <h1>Our Wedding</h1>
+            <div class="envelope" id="envelope">
+                <div class="envelope-flap"></div>
+                <div class="envelope-body"></div>
+                <div class="envelope-letter">
+                    <span>With Love</span>
+                    <h2>Isaiahs & Hannah Mae</h2>
+                </div>
+                <div class="envelope-seal">♥</div>
+            </div>
+            <p class="open-text">A beautiful beginning awaits...</p>
+            <button class="open-button" id="openButton">
+                OPEN INVITATION
+            </button>
+        </div>
+    </section>
+
+    <!-- MAIN INVITATION -->
+    <main id="invitation" class="invitation hidden">
+
+        <nav class="top-nav">
+            <span>Isaiahs & Hannah Mae</span>
+            <button id="musicButton">♫ Music Off</button>
+        </nav>
+
+        <!-- HERO -->
+        <section class="hero">
+            <div class="hero-overlay"></div>
+            <div class="hero-content">
+                <p class="eyebrow">TOGETHER WITH THEIR FAMILIES</p>
+                <h1>Isaiahs <span>&</span> Hannah Mae</h1>
+                <p class="hero-subtitle">INVITE YOU TO CELEBRATE THEIR WEDDING</p>
+                <div class="gold-line"></div>
+                <p class="wedding-date">DECEMBER 12, 2027</p>
+                <p class="hero-location">MANILA, PHILIPPINES</p>
+            </div>
+        </section>
+
+        <!-- INTRODUCTION -->
+        <section class="intro section-padding">
+            <p class="section-label">A CELEBRATION OF LOVE</p>
+            <h2>Two Hearts, One Journey</h2>
+            <div class="divider">✦</div>
+            <p class="intro-text">
+                Together with the people we love, we joyfully invite you
+                to witness the beginning of our forever.
+                Your presence will make our special day even more meaningful.
+            </p>
+            <p class="signature">With love, Isaiahs & Hannah Mae</p>
+        </section>
+
+        <!-- COUNTDOWN -->
+        <section class="countdown-section">
+            <p class="section-label">THE BIG DAY IS APPROACHING</p>
+            <h2>Counting Every Moment</h2>
+
+            <div class="countdown">
+                <div><strong id="days">00</strong><span>DAYS</span></div>
+                <div><strong id="hours">00</strong><span>HOURS</span></div>
+                <div><strong id="minutes">00</strong><span>MINUTES</span></div>
+                <div><strong id="seconds">00</strong><span>SECONDS</span></div>
+            </div>
+        </section>
+
+        <!-- WEDDING DETAILS -->
+        <section class="details section-padding">
+            <p class="section-label">SAVE THE DATE</p>
+            <h2>Wedding Details</h2>
+
+            <div class="details-grid">
+                <article class="detail-card">
+                    <div class="detail-icon">♧</div>
+                    <h3>The Ceremony</h3>
+                    <p>Saturday, December 12, 2027</p>
+                    <p>2:00 PM</p>
+                    <p>Our Lady of Peace Church</p>
+                    <p>Manila, Philippines</p>
+                </article>
+
+                <article class="detail-card">
+                    <div class="detail-icon">✧</div>
+                    <h3>The Reception</h3>
+                    <p>Saturday, December 12, 2027</p>
+                    <p>5:00 PM</p>
+                    <p>The Grand Ballroom</p>
+                    <p>Manila, Philippines</p>
+                </article>
+            </div>
+
+            <a class="map-button"
+               href="https://maps.google.com"
+               target="_blank" rel="noopener">
+                VIEW LOCATION
+            </a>
+        </section>
+
+        <!-- GALLERY -->
+        <section class="gallery-section section-padding">
+            <p class="section-label">OUR BEAUTIFUL MOMENTS</p>
+            <h2>Captured Memories</h2>
+
+            <div class="gallery">
+                <img src="assets/image2.jpg" alt="Our wedding photograph">
+                <div class="gallery-placeholder">
+                    <span>Our Story</span>
+                    <p>Every moment led us here.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- DRESS CODE -->
+        <section class="dress-code section-padding">
+            <p class="section-label">DRESS CODE</p>
+            <h2>Elegantly Dressed</h2>
+            <p>We invite our guests to wear formal attire in these colors.</p>
+
+            <div class="color-palette">
+                <span style="background:#d8c6a5"></span>
+                <span style="background:#e8dfd1"></span>
+                <span style="background:#a9a18c"></span>
+                <span style="background:#6e7461"></span>
+                <span style="background:#493d35"></span>
+            </div>
+            <p class="dress-note">Champagne • Beige • Sage • Earth Tones</p>
+        </section>
+
+        <!-- RSVP -->
+        <section class="rsvp-section section-padding" id="rsvp">
+            <p class="section-label">KINDLY RESPOND</p>
+            <h2>Will You Join Us?</h2>
+            <p>We would love to celebrate this special day with you.</p>
+
+            <form id="rsvpForm">
+                <input type="text" id="guestName"
+                       placeholder="Your Full Name" required>
+
+                <input type="email" id="guestEmail"
+                       placeholder="Your Email Address" required>
+
+                <select id="attendance" required>
+                    <option value="">Will you attend?</option>
+                    <option value="Yes">Joyfully Accept</option>
+                    <option value="No">Regretfully Decline</option>
+                </select>
+
+                <select id="guestCount">
+                    <option value="1">1 Guest</option>
+                    <option value="2">2 Guests</option>
+                    <option value="3">3 Guests</option>
+                    <option value="4">4 Guests</option>
+                </select>
+
+                <textarea id="message"
+                    placeholder="Leave a message for the couple..."></textarea>
+
+                <button type="submit">SEND RSVP</button>
+            </form>
+
+            <p id="rsvpMessage"></p>
+        </section>
+
+        <!-- FOOTER -->
+        <footer>
+            <h2>Isaiahs & Hannah Mae</h2>
+            <p>Forever Begins Here.</p>
+            <div class="divider">♥</div>
+            <small>WITH LOVE, ALWAYS · 2027</small>
+        </footer>
+
+    </main>
+
+    <audio id="weddingMusic" loop>
+        <source src="assets/music.mp3" type="audio/mpeg">
+    </audio>
+
+    <script src="js/script.js"></script>
+</body>
+</html>

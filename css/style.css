@@ -1,0 +1,476 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --cream: #f8f5ef;
+    --gold: #b49a68;
+    --dark: #39362f;
+    --muted: #817a6e;
+}
+
+body {
+    background: var(--cream);
+    color: var(--dark);
+    font-family: 'Montserrat', sans-serif;
+}
+
+.hidden {
+    display: none !important;
+}
+
+h1, h2, h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 500;
+}
+
+button {
+    cursor: pointer;
+    font-family: inherit;
+}
+
+/* ENVELOPE */
+
+.envelope-screen {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background: linear-gradient(135deg, #e9dfd0, #f8f5ef);
+    padding: 30px;
+}
+
+.envelope-content h1 {
+    font-family: 'Great Vibes', cursive;
+    font-size: 65px;
+    color: var(--gold);
+    margin: 20px 0 35px;
+}
+
+.small-heading, .section-label {
+    font-size: 10px;
+    letter-spacing: 4px;
+    color: var(--gold);
+}
+
+.envelope {
+    position: relative;
+    width: 290px;
+    height: 185px;
+    margin: 0 auto;
+    perspective: 1000px;
+}
+
+.envelope-body {
+    position: absolute;
+    inset: 0;
+    background: #d9c6a8;
+    border: 1px solid #b49a68;
+    z-index: 2;
+}
+
+.envelope-body::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(145deg, transparent 49%, #c4ae8c 50%);
+    clip-path: polygon(0 0, 100% 0, 50% 100%);
+}
+
+.envelope-flap {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #c9b18c;
+    clip-path: polygon(0 0, 100% 0, 50% 55%);
+    transform-origin: top;
+    transition: transform 0.8s ease;
+    z-index: 4;
+}
+
+.envelope-letter {
+    position: absolute;
+    background: #fffdf8;
+    inset: 15px;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transition: transform 1s ease;
+}
+
+.envelope-letter span {
+    font-family: 'Great Vibes', cursive;
+    font-size: 25px;
+    color: var(--gold);
+}
+
+.envelope-letter h2 {
+    font-size: 35px;
+}
+
+.envelope-seal {
+    position: absolute;
+    z-index: 5;
+    top: 47%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: #967347;
+    color: white;
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    transition: opacity .4s;
+}
+
+.envelope.open .envelope-flap {
+    transform: rotateX(180deg);
+}
+
+.envelope.open .envelope-letter {
+    transform: translateY(-100px);
+    z-index: 5;
+}
+
+.envelope.open .envelope-seal {
+    opacity: 0;
+}
+
+.open-text {
+    margin: 30px 0 20px;
+    color: var(--muted);
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 20px;
+}
+
+.open-button, .rsvp-section button {
+    background: var(--gold);
+    color: white;
+    border: none;
+    padding: 16px 35px;
+    letter-spacing: 3px;
+    font-size: 10px;
+}
+
+/* NAVIGATION */
+
+.top-nav {
+    height: 65px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 7%;
+    background: #faf8f3;
+}
+
+.top-nav span {
+    font-family: 'Great Vibes', cursive;
+    color: var(--gold);
+    font-size: 30px;
+}
+
+.top-nav button {
+    border: 1px solid var(--gold);
+    color: var(--gold);
+    background: transparent;
+    padding: 9px 16px;
+    font-size: 10px;
+}
+
+/* HERO */
+
+.hero {
+    min-height: 650px;
+    display: grid;
+    place-items: center;
+    text-align: center;
+    position: relative;
+    color: white;
+    background:
+        linear-gradient(rgba(35,31,25,.48), rgba(35,31,25,.55)),
+      url("../assets/image1.jpg") center/cover;
+}
+
+.hero-content {
+    position: relative;
+    padding: 30px;
+}
+
+.hero h1 {
+    font-family: 'Great Vibes', cursive;
+    font-size: clamp(55px, 9vw, 100px);
+    margin: 25px 0;
+}
+
+.hero h1 span {
+    color: #d9bf91;
+}
+
+.eyebrow, .hero-subtitle, .wedding-date,
+.hero-location {
+    letter-spacing: 4px;
+    font-size: 11px;
+}
+
+.gold-line {
+    width: 80px;
+    height: 1px;
+    background: #d9bf91;
+    margin: 30px auto;
+}
+
+/* GENERAL SECTIONS */
+
+.section-padding {
+    padding: 100px 8%;
+    text-align: center;
+}
+
+.section-padding h2, .countdown-section h2 {
+    font-size: clamp(38px, 5vw, 55px);
+    margin: 18px 0;
+}
+
+.divider {
+    color: var(--gold);
+    margin: 25px 0;
+}
+
+.intro-text {
+    max-width: 600px;
+    line-height: 2;
+    margin: auto;
+    color: var(--muted);
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 22px;
+}
+
+.signature {
+    font-family: 'Great Vibes', cursive;
+    font-size: 35px;
+    margin-top: 30px;
+    color: var(--gold);
+}
+
+/* COUNTDOWN */
+
+.countdown-section {
+    background: #e9e1d4;
+    text-align: center;
+    padding: 80px 20px;
+}
+
+.countdown {
+    display: flex;
+    justify-content: center;
+    gap: 35px;
+    flex-wrap: wrap;
+    margin-top: 45px;
+}
+
+.countdown div {
+    display: flex;
+    flex-direction: column;
+    min-width: 80px;
+}
+
+.countdown strong {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 55px;
+    font-weight: 400;
+}
+
+.countdown span {
+    font-size: 9px;
+    letter-spacing: 3px;
+    color: var(--muted);
+}
+
+/* DETAILS */
+
+.details-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+    max-width: 850px;
+    margin: 50px auto 35px;
+}
+
+.detail-card {
+    background: #fffdf9;
+    padding: 45px 20px;
+    border: 1px solid #e5dccd;
+}
+
+.detail-icon {
+    color: var(--gold);
+    font-size: 35px;
+}
+
+.detail-card h3 {
+    font-size: 30px;
+    margin: 15px 0;
+}
+
+.detail-card p {
+    color: var(--muted);
+    font-size: 12px;
+    line-height: 2.2;
+}
+
+.map-button {
+    display: inline-block;
+    padding: 15px 30px;
+    border: 1px solid var(--gold);
+    color: var(--gold);
+    text-decoration: none;
+    font-size: 10px;
+    letter-spacing: 2px;
+}
+
+/* GALLERY */
+
+.gallery {
+    max-width: 800px;
+    margin: 40px auto;
+}
+
+.gallery img {
+    width: 100%;
+    max-height: 550px;
+    object-fit: cover;
+}
+
+.gallery-placeholder {
+    padding: 30px;
+    background: #e9e1d4;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 22px;
+}
+
+/* DRESS CODE */
+
+.dress-code {
+    background: #eee9df;
+}
+
+.color-palette {
+    display: flex;
+    justify-content: center;
+    margin: 35px 0 20px;
+}
+
+.color-palette span {
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+    margin: 0 8px;
+    border: 3px solid white;
+}
+
+.dress-note {
+    color: var(--muted);
+    font-size: 12px;
+}
+
+/* RSVP */
+
+.rsvp-section {
+    background: #faf8f3;
+}
+
+.rsvp-section > p:not(.section-label) {
+    color: var(--muted);
+    margin: 20px 0;
+}
+
+#rsvpForm {
+    max-width: 500px;
+    margin: 35px auto 0;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+#rsvpForm input, #rsvpForm select,
+#rsvpForm textarea {
+    padding: 16px;
+    border: 1px solid #ded6c9;
+    background: white;
+    font-family: inherit;
+    font-size: 12px;
+    width: 100%;
+}
+
+#rsvpForm textarea {
+    min-height: 110px;
+    resize: vertical;
+}
+
+#rsvpMessage {
+    color: #64734e;
+    margin-top: 20px;
+}
+
+/* FOOTER */
+
+footer {
+    padding: 65px 20px;
+    text-align: center;
+    background: #37352f;
+    color: #f8f5ef;
+}
+
+footer h2 {
+    font-family: 'Great Vibes', cursive;
+    font-size: 45px;
+    color: #d6bc8d;
+}
+
+footer p {
+    margin-top: 15px;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 20px;
+}
+
+footer small {
+    font-size: 9px;
+    letter-spacing: 3px;
+}
+
+/* RESPONSIVE */
+
+@media(max-width: 650px) {
+    .hero {
+        min-height: 550px;
+    }
+
+    .details-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .section-padding {
+        padding: 75px 6%;
+    }
+
+    .countdown {
+        gap: 20px;
+    }
+
+    .countdown strong {
+        font-size: 42px;
+    }
+
+    .color-palette span {
+        width: 40px;
+        height: 40px;
+        margin: 0 4px;
+    }
+}
